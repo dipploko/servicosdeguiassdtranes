@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yokota Autopeças | Peças Automotivas</title>
+    <meta name="description" content="Encontre peças automotivas na Yokota Autopeças. Consulte nosso catálogo e faça seu pedido.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #171717;
+            color: white;
+            padding: 20px 5%;
+        }
+
+        .topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f5a623;
+        }
+
+        .busca {
+            display: flex;
+            gap: 5px;
+        }
+
+        .busca input {
+            padding: 12px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #f5a623;
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #292929;
+            padding: 15px 5%;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .banner {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .banner h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        .titulo {
+            margin-bottom: 25px;
+            font-size: 25px;
+        }
+
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .categoria {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .produto {
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .produto img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .produto h3 {
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            color: #d98200;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .contato {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            line-height: 2;
+        }
+
+        footer {
+            background: #171717;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .banner h1 {
+                font-size: 27px;
+            }
+
+            .busca input {
+                width: 180px;
+            }
+
+            .topo {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="topo">
+        <div class="logo">YOKOTA AUTOPEÇAS</div>
+
+        <div class="busca">
+            <input type="text" id="pesquisa" placeholder="Buscar autopeças...">
+            <button onclick="buscarProduto()">Buscar</button>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section class="banner" id="inicio">
+    <h1>Yokota Autopeças</h1>
+    <p>Qualidade e confiança para o seu veículo!</p>
+    <br>
+    <button onclick="document.getElementById('produtos').scrollIntoView()">
+        Ver produtos
+    </button>
+</section>
+
+<main class="container">
+
+    <section id="categorias">
+        <h2 class="titulo">Categorias de Produtos</h2>
+
+        <div class="categorias">
+            <div class="categoria">Motor</div>
+            <div class="categoria">Suspensão</div>
+            <div class="categoria">Freios</div>
+            <div class="categoria">Direção</div>
+            <div class="categoria">Transmissão</div>
+            <div class="categoria">Elétrica</div>
+            <div class="categoria">Injeção</div>
+            <div class="categoria">Ignição</div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section id="produtos">
+        <h2 class="titulo">Nossos Produtos</h2>
+
+        <div class="produtos" id="listaProdutos">
+
+            <div class="produto">
+                <img src="https://placehold.co/300x200?text=Filtro+de+Oleo" alt="Filtro de óleo">
+                <h3>Filtro de Óleo</h3>
+                <p>Peça automotiva</p>
+                <div class="preco">Consulte o preço</div>
+                <button onclick="comprar('Filtro de Óleo')">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="https://placehold.co/300x200?text=Pastilha+de+Freio" alt="Pastilha de freio">
+                <h3>Pastilha de Freio</h3>
+                <p>Peça automotiva</p>
+                <div class="preco">Consulte o preço</div>
+                <button onclick="comprar('Pastilha de Freio')">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="https://placehold.co/300x200?text=Amortecedor" alt="Amortecedor">
+                <h3>Amortecedor</h3>
+                <p>Peça automotiva</p>
+                <div class="preco">Consulte o preço</div>
+                <button onclick="comprar('Amortecedor')">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="https://placehold.co/300x200?text=Correia" alt="Correia">
+                <h3>Correia</h3>
+                <p>Peça automotiva</p>
+                <div class="preco">Consulte o preço</div>
+                <button onclick="comprar('Correia')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <br><br>
+
+    <section id="contato">
+        <h2 class="titulo">Entre em contato</h2>
+
+        <div class="contato">
+            <p><strong>Yokota Autopeças</strong></p>
+            <p>Atendimento e vendas de peças automotivas.</p>
+            <p>Consulte disponibilidade e preços.</p>
+            <p>Entre em contato pelo WhatsApp.</p>
+            <br>
+            <button onclick="contatoWhatsApp()">
+                Falar pelo WhatsApp
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Yokota Autopeças</p>
+    <p>Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // SUBSTITUA PELO NÚMERO OFICIAL DA LOJA
+    const whatsapp = "5599999999999";
+
+    function comprar(produto) {
+        const mensagem = "Olá! Gostaria de comprar: " + produto;
+        window.open(
+            "https://wa.me/" + whatsapp + "?text=" +
+            encodeURIComponent(mensagem),
+            "_blank"
+        );
+    }
+
+    function contatoWhatsApp() {
+        comprar("Gostaria de informações sobre produtos");
+    }
+
+    function buscarProduto() {
+        const pesquisa = document.getElementById("pesquisa")
+            .value.toLowerCase();
+
+        const produtos = document.querySelectorAll(".produto");
+
+        produtos.forEach(produto => {
+            const nome = produto.innerText.toLowerCase();
+
+            produto.style.display =
+                nome.includes(pesquisa) ? "block" : "none";
+        });
+    }
+</script>
+
+</body>
+</html>
